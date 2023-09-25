@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon";
+import { projects } from "../lib/data";
+
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props;
+
+const project = projects.find(project => project.id === id)
+---
+
+<table class="table-auto text-left min-w-full divide-y-2 divide-gray-500/30">
+  <thead>
+    <tr class="text-gray-300">
+      <th class="font-normal px-4 py-2">#</th>
+      <th class="font-normal px-4 py-2">Title</th>
+      <th class="font-normal px-4 py-2">Album</th>
+      <th class="font-normal px-4 py-2  text-right">
+        <Icon name="carbon:time" class="inline-block h-5 w-5" />
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      project && project?.technologies?.map((tech, index) => (
+        <tr class=" group hover:bg-gray-500/20">
+          <td class="px-4 py-2 text-xs md:text-lg">{index + 1}</td>
+          <td class="px-4 py-2 flex gap-3 items-center">
+            <div class="h-6 w-6 md:h-10 md:w-10">
+              <img
+                src={tech.svg}
+                alt={tech.name}
+                class="rounded object-cover h-full w-full shadow-[5px_0_30px_0px_rgba(0,0,0,0.3)]"
+              />
+            </div>
+            <div class="leading-none">
+              <a
+                href="#"
+                class="text-gray-300 group-hover:text-white hover:underline text-sm"
+              >
+                {tech.name}
+              </a>
+
+            </div>
+          </td>
+          <td class="whitespace-nowrap px-4 py-2">
+            <a
+              href="#"
+              class="text-gray-300 group-hover:text-white hover:underline text-sm"
+            >
+              {tech.rol}
+            </a>
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-right">
+            2:56
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

@@ -1,0 +1,53 @@
+---
+import PageHeader from '../components/PageHeader.astro'
+import Layout from '../layouts/Layout.astro'
+import { technologies } from '../lib/technologies';
+---
+
+<Layout title='Profile'>
+  <div
+    class='relative transition-all duration-700 bg-context'
+    style='min-height:350px;--context-color:#134e4a;'
+  >
+    <PageHeader />
+    <div class='flex relative gap-6 z-10 px-6'>
+      <div>
+        <img
+          src='./Lucas-4x4.avif'
+          class='w-44 xl:w-60 rounded-full transition-all duration-200'
+          alt='Imagen de Lucas Lopez con lentes y una remera negra'
+        />
+      </div>
+      <div class='flex flex-col justify-center gap-4'>
+        <h1 class='font-bold text-3xl'>Lucas Lopez</h1>
+        <h3 class='text-center text-gray-300 font-medium'>
+          Full Stack Developer
+        </h3>
+      </div>
+    </div>
+    <div class='flex gap-8 justify-evenly min-w-fit'>
+      <a href="mailto:contact.lopezlucas@gmail.com">
+      <p
+      class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+    >
+      Contact me
+    </p></a>
+      <a href="./CV-Lucas-Lopez.pdf" download>
+        <p
+        class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+      >
+        Download CV
+      </p>
+      </a>
+    </div>
+    <div
+      class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20'
+    >
+    </div>
+  </div>
+  <div class='px-6 relative z-10 mt-4'>
+    <h2 class='text-3xl font-medium'>About me</h2>
+    <div class="grid grid-cols-1">
+    </div>
+  </div>
+</Layout>

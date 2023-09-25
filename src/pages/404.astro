@@ -1,0 +1,27 @@
+---
+import PageHeader from '../components/PageHeader.astro'
+import Layout from '../layouts/Layout.astro'
+import { technologies } from '../lib/technologies'
+---
+
+<Layout title='Profile'>
+  <div
+    class='relative transition-all duration-700 bg-context'
+    style='min-height:350px;--context-color:#134e4a;'
+  >
+    <PageHeader />
+    <div class='flex relative gap-6 z-10 px-6'></div>
+    <div class="text-center mx-6">
+      <h1 class='text-xl font-bold mt-4'>
+        Ups! Parece que la página que buscas no existe..
+      </h1>
+      <a href='/'>
+        <p class="relative z-10 top-10 border rounded-3xl mx-auto max-w-xs px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg">Volver al Home</p>
+      </a>
+    </div>
+    <div
+      class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20'
+    >
+    </div>
+  </div>
+</Layout>
