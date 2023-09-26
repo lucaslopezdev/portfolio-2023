@@ -1,7 +1,13 @@
 ---
 import PageHeader from '../components/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
-import { technologies } from '../lib/technologies';
+import { technologies } from '../lib/technologies'
+
+const { javascript } = technologies
+const { typescript } = technologies
+const { react } = technologies
+const { tailwind } = technologies
+const { node } = technologies
 ---
 
 <Layout title='Profile'>
@@ -14,30 +20,35 @@ import { technologies } from '../lib/technologies';
       <div>
         <img
           src='./Lucas-4x4.avif'
-          class='w-44 xl:w-60 rounded-full transition-all duration-200'
+          class='min-w-[176px] w-44 xl:w-60 rounded-full transition-all duration-200'
           alt='Imagen de Lucas Lopez con lentes y una remera negra'
         />
       </div>
       <div class='flex flex-col justify-center gap-4'>
-        <h1 class='font-bold text-3xl'>Lucas Lopez</h1>
-        <h3 class='text-center text-gray-300 font-medium'>
+        <h1
+          class='font-bold text-3xl lg:text-6xl xl:text-8xl transition-all duration-200'
+        >
+          Lucas Lopez
+        </h1>
+        <h3 class='text-gray-300 font-medium ml-1 lg:text-4xl'>
           Full Stack Developer
         </h3>
       </div>
     </div>
-    <div class='flex gap-8 justify-evenly min-w-fit'>
-      <a href="mailto:contact.lopezlucas@gmail.com">
-      <p
-      class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
-    >
-      Contact me
-    </p></a>
-      <a href="./CV-Lucas-Lopez.pdf" download>
+    <div class='flex gap-6 lg:gap-12 justify-center xl:justify-start xl:pl-12 '>
+      <a href='mailto:contact.lopezlucas@gmail.com'>
         <p
-        class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+          class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+        >
+          Contact me
+        </p></a
       >
-        Download CV
-      </p>
+      <a href='./CV-Lucas-Lopez.pdf' download>
+        <p
+          class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+        >
+          Download CV
+        </p>
       </a>
     </div>
     <div
@@ -45,9 +56,63 @@ import { technologies } from '../lib/technologies';
     >
     </div>
   </div>
-  <div class='px-6 relative z-10 mt-4'>
-    <h2 class='text-3xl font-medium'>About me</h2>
-    <div class="grid grid-cols-1">
+  <div class='m-6 z-10 relative mt-4'>
+    <h2 class='text-3xl font-medium mt-20'>About me</h2>
+    <div>
+      <div class="flex justify-between my-6 mb-10 px-6">
+        <h1
+          class='text-xl md:text-2xl lg:text-3xl xl:text-5xl transition-all duration-200 font-bold'
+        >
+          Tech Skills
+        </h1>
+        <a class="hover:underline text-gray-300 text-sm md:text-lg lg:text-xl pt-1.5" href='/tech'>Show all</a>
+      </div>
+      <div
+        class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'
+      >
+        <div class='mx-auto'>
+          <img
+            src={javascript.svg}
+            alt=`Image of ${javascript.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{javascript.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={typescript.svg}
+            alt=`Image of ${typescript.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{typescript.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={react.svg} alt=`Image of ${react.name}` width='100px' />
+          <p class='text-center mt-3'>{react.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={tailwind.svg}
+            alt=`Image of ${tailwind.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{tailwind.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={node.svg} alt=`Image of ${node.name}` width='100px' />
+          <p class='text-center mt-3'>{node.name}</p>
+        </div>
+      </div>
     </div>
+    <div>
+      <div class="flex justify-between my-6 mb-10 px-6">
+        <h1
+          class='text-xl md:text-2xl lg:text-3xl xl:text-5xl transition-all duration-200 font-bold'
+        >
+        Work experience
+        </h1>
+      </div>
+    </div>
+    <div class='grid grid-cols-1'></div>
   </div>
 </Layout>

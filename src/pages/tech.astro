@@ -1,53 +1,154 @@
 ---
-import PageHeader from '../components/PageHeader.astro'
+import { Icon } from 'astro-icon'
 import Layout from '../layouts/Layout.astro'
-import { technologies } from '../lib/technologies';
+import { technologies } from '../lib/technologies'
+
+const { react } = technologies
+const { javascript } = technologies
+const { typescript } = technologies
+const { redux } = technologies
+const { tailwind } = technologies
+const { node } = technologies
+const { express } = technologies
+const { postgresql } = technologies
+const { sequelize } = technologies
+const { html } = technologies
+const { css } = technologies
+const { astro } = technologies
+const { github } = technologies
 ---
 
-<Layout title='Profile'>
+<Layout title='Tech Skills'>
   <div
     class='relative transition-all duration-700 bg-context'
-    style='min-height:350px;--context-color:#134e4a;'
+    style='min-height:150px;--context-color:#156862;'
   >
-    <PageHeader />
-    <div class='flex relative gap-6 z-10 px-6'>
-      <div>
-        <img
-          src='./Lucas-4x4.avif'
-          class='w-44 xl:w-60 rounded-full transition-all duration-200'
-          alt='Imagen de Lucas Lopez con lentes y una remera negra'
-        />
-      </div>
-      <div class='flex flex-col justify-center gap-4'>
-        <h1 class='font-bold text-3xl'>Lucas Lopez</h1>
-        <h3 class='text-center text-gray-300 font-medium'>
-          Full Stack Developer
-        </h3>
+    <div
+      class='relative z-10 py-4 px-6 flex justify-between'
+      transition:name='go profile'
+      transition:persist
+    >
+      <a
+        href='/profile'
+        aria-label='go back to profile'
+        class='bg-zinc-900 mr-4 rounded-full inline-flex justify-center items-center h-8 w-8'
+      >
+        <Icon name='bi:chevron-left' class='h-4 w-4 -ml-0.5' />
+      </a>
+      <div class='flex items-center gap-3'>
+        <a
+          target='_blank'
+          aria-label={'github repository'}
+          href='https://www.linkedin.com/in/lucaslopezdev/'
+          class='text-gray-200 hover:text-white'
+        >
+          <Icon name='mdi:linkedin' class='h-7 w-7' />
+        </a>
+        <a
+          target='_blank'
+          aria-label={'github repository'}
+          href='https://github.com/lucaslopezdev/portfolio-2023'
+          class='text-gray-200 hover:text-white'
+        >
+          <Icon name='mdi:github' class='h-7 w-7' />
+        </a>
+        <a
+          aria-label={'github repository'}
+          href='/profile'
+          class='text-gray-200 hover:text-white'
+        >
+          <Icon name='mdi:user' class='h-7 w-7' />
+        </a>
       </div>
     </div>
-    <div class='flex gap-8 justify-evenly min-w-fit'>
-      <a href="mailto:contact.lopezlucas@gmail.com">
-      <p
-      class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
-    >
-      Contact me
-    </p></a>
-      <a href="./CV-Lucas-Lopez.pdf" download>
-        <p
-        class='relative z-10 top-10 text-center border rounded-3xl px-6 py-3 font-medium hover:cursor-pointer hover:bg-zinc-900 transition-all duration-300 hover:shadow-lg'
+
+    <div class=''></div>
+    <div class='mx-6 z-10 relative'>
+      <h1
+        class='text-3xl md:text-5xl lg:text-6xl xl:text-8xl transition-all duration-200 font-bold mt-4 mb-10'
       >
-        Download CV
-      </p>
-      </a>
+        Tech Skills
+      </h1>
+      <div
+        class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'
+      >
+        <div class='mx-auto'>
+          <img
+            src={javascript.svg}
+            alt=`Image of ${javascript.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{javascript.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={typescript.svg}
+            alt=`Image of ${typescript.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{typescript.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={react.svg} alt=`Image of ${react.name}` width='100px' />
+          <p class='text-center mt-3'>{react.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={redux.svg} alt=`Image of ${redux.name}` width='100px' />
+          <p class='text-center mt-3'>{redux.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={tailwind.svg}
+            alt=`Image of ${tailwind.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{tailwind.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={node.svg} alt=`Image of ${node.name}` width='100px' />
+          <p class='text-center mt-3'>{node.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={express.svg} alt=`Image of ${express.name}` width='100px' />
+          <p class='text-center mt-3'>{express.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={postgresql.svg}
+            alt=`Image of ${postgresql.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{postgresql.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img
+            src={sequelize.svg}
+            alt=`Image of ${sequelize.name}`
+            width='100px'
+          />
+          <p class='text-center mt-3'>{sequelize.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={html.svg} alt=`Image of ${html.name}` width='100px' />
+          <p class='text-center mt-3'>{html.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={css.svg} alt=`Image of ${css.name}` width='100px' />
+          <p class='text-center mt-3'>{css.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={github.svg} alt=`Image of ${github.name}` width='100px' />
+          <p class='text-center mt-3'>{github.name}</p>
+        </div>
+        <div class='mx-auto'>
+          <img src={astro.svg} alt=`Image of ${astro.name}` width='100px' />
+          <p class='text-center mt-3'>{astro.name}</p>
+        </div>
+      </div>
     </div>
     <div
-      class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20'
+      class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/60'
     >
-    </div>
-  </div>
-  <div class='px-6 relative z-10 mt-4'>
-    <h2 class='text-3xl font-medium'>About me</h2>
-    <div class="grid grid-cols-1">
     </div>
   </div>
 </Layout>
